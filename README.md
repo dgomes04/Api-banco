@@ -37,8 +37,8 @@ Class-validator, Prisma, Crypto e Express
 
 ## Erros 
 <ul>
-<li>Erro 1- {Dado} já existente no banco de dados </li>
-<li>Erro 2- Usuário ou senha inválidos</li>
-<li>Erro 3- CPF Inválido ou inexistente </li>
-<li>Erro 4- Saldo insuficiente para realizar esta transação</li>
+<li>Tipo 1- {Dado} já existente no banco de dados </li>
+<li>Tipo 2- Usuário ou senha inválidos</li>
+<li>Tipo 3- CPF Inválido ou inexistente </li>
+<li>Tipo 4- Saldo insuficiente para realizar esta transação</li>
 </ul>
