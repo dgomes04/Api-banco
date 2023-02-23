@@ -86,6 +86,7 @@ export class UsuarioController {
                erro.status = 401;
                throw erro;
             }
+            
          }
       } catch (error) {
          var status = error.status;
