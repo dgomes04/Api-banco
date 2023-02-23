@@ -161,7 +161,7 @@ export class UsuarioController {
    }
 
    @Post('/depositar')
-   async VerificarPessoaParaDepositar(@Body() body:Depositar, @Res() response:Response){
+   async Pix(@Body() body:Depositar, @Res() response:Response){
       const { cpfEnviar, cpfReceber, valorParaDepositar} = body;
       let erro = {
          status: 0,
