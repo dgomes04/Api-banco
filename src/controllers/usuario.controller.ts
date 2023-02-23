@@ -6,13 +6,21 @@ import * as bcrypt from 'bcrypt';
 import { Response } from "express";
 import { Depositar } from "./Interfaces/userInterface/Depositar";
 import { randomUUID } from "crypto";
+import {  ApiBadRequestResponse, ApiCreatedResponse, ApiOkResponse, ApiTags, ApiUnauthorizedResponse } from "@nestjs/swagger/dist/decorators";
 
-
+@ApiTags('Usuario')
 @Controller('usuario')
 export class UsuarioController {
    constructor(private readonly prisma: PrismaService) { }
 
    @Post('/criar')
+   @ApiCreatedResponse({
+      description: 'Retorna uma mensagem de sucesso'
+   })
+   @ApiUnauthorizedResponse({
+      
+      description: 'Retorna um objeto JSON com uma mensagem de erro e o tipo do erro'
+   })
    async CreateUser(@Body() body: CreateUser, @Res() response: Response) {
       let erro = {
          status: 0,
@@ -90,7 +98,8 @@ export class UsuarioController {
       
 
    }
-   
+   @ApiOkResponse({description: 'Retorna um JSON com os dados do usuário'})
+   @ApiBadRequestResponse({description: "Retorna uma mensagem de erro e o tipo do erro"})
    @Post('/logar')
    async Login(@Body() body: LoginUser, @Res() response: Response) {
       const { cpf } = body;
@@ -131,7 +140,7 @@ export class UsuarioController {
                      idReceber: true
                   }
                })
-               response.status(201).send({
+               response.status(200).send({
                   dados
                })
             }
@@ -159,7 +168,8 @@ export class UsuarioController {
          response.status(status).send(dataEnviar)
       }
    }
-
+   @ApiOkResponse({description: "Retorna uma mensagem de sucesso"})
+   @ApiBadRequestResponse({description: "Retorna um objeto JSON com uma mensagem de erro e o tipo do erro"})
    @Post('/depositar')
    async Pix(@Body() body:Depositar, @Res() response:Response){
       const { cpfEnviar, cpfReceber, valorParaDepositar} = body;
