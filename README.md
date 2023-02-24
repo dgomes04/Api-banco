@@ -11,7 +11,7 @@ Class-validator, Prisma, Crypto, Express e Swagger
 	<li>Passo 2 - npx prisma db push no terminal</li>
 	<li>Passo 3 - npm run start:dev no terminal</li>
 	
-	Observação: Necessário possuir mySQL instalado para poder ultilizar e uma tabela disponível para ultilização
+	Observação: Necessário possuir mySQL instalado para poder ultilizar e uma tabela disponível 
 </ul>
 
 ## Swagger
