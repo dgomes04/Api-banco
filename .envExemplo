@@ -1,1 +1,6 @@
 DATABASE_URL="mysql://USER:PASSWORD@HOST:PORT/mydb"
+//USER = usuario do banco
+//PASSWORD = Senha do banco
+//HOST = Host do banco (localhost)
+//PORT = Porta em que o banco esta rodando
+//mydb = Schema no qual a api salvará os dados e criará as tabelas
